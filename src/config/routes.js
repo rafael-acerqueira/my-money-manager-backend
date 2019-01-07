@@ -6,5 +6,5 @@ module.exports = function(server) {
   server.use('/api', router)
 
   const BillingCycle = require('../api/billingCycle/billingCycleService')
-  BillingCycle.register(router, '/billingCyles')
+  BillingCycle.register(router, '/billingCycles')
 }

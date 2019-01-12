@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-module.exports = mongoose.connect('mongodb://localhost/mymoneymanager', {
-  useNewUrlParser: true
-})
+
+const url = process.env.MONGOLAB_URI ? process.env.MONGOLAB_URI : 
+            'mongodb://localhost/mymoneymanager'
+
+module.exports = mongoose.connect(url, { useNewUrlParser: true })
